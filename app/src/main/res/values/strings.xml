@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Exercise1</string>
+    <string name="no_email_app">Sorry you have no email apps on your phone..</string>
+    <string name="no_text_warning">Please enter your message..</string>
+    <string name="type_your_message_here">Type your message here...</string>
+    <string name="preview">Preview</string>
+    <string name="we_love_android">We love Android!</string>
+    <string name="email">EMAIL</string>
+</resources>

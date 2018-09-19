@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercise1</string>
+    <string name="no_email_app">Приложений для отправки сообщений не обнаружено..</string>
+    <string name="no_text_warning">Заполните поле</string>
+    <string name="type_your_message_here">Введите ваше сообщение</string>
+    <string name="preview">Превью</string>
+    <string name="we_love_android">Мы любим Android!</string>
+    <string name="email">Отослать сообщение</string>
+</resources>
