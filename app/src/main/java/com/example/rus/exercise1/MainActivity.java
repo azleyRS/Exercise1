@@ -3,6 +3,7 @@ package com.example.rus.exercise1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     //develop branch
 
-    private EditText message;
+    private EditText messageEditText;
     private Button sendButton;
 
     @Override
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        message = findViewById(R.id.message_edit_text);
+        messageEditText = findViewById(R.id.message_edit_text);
         sendButton = findViewById(R.id.send_button);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openMessageActivity() {
-        if (message.getText().length() != 0){
-            Intent intent = MessageActivity.newIntent(this, message.getText().toString());
+        if (!TextUtils.isEmpty(messageEditText.getText())){
+            Intent intent = MessageActivity.newIntent(this, messageEditText.getText().toString());
             startActivity(intent);
         } else {
             Toast.makeText(this, R.string.no_text_warning, Toast.LENGTH_SHORT).show();
