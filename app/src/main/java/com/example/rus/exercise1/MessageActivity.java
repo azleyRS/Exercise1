@@ -12,12 +12,17 @@ import android.widget.Toast;
 
 public class MessageActivity extends AppCompatActivity {
 
-    private TextView messageText;
-    private Button emailButton;
-
     private static final String KEY_TEXT = "KEY_TEXT";
+    private TextView messageTextView;
+    private Button emailButton;
     private String email = "azley@mail.ru";
     private String subject = "Hello, Android Academy MSK!";
+
+    public static Intent newIntent(Context context, String text) {
+        Intent intent = new Intent(context, MessageActivity.class);
+        intent.putExtra(KEY_TEXT, text);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +33,10 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     private void init() {
-        messageText = findViewById(R.id.message_text_view);
+        messageTextView = findViewById(R.id.message_text_view);
         emailButton = findViewById(R.id.email_button);
 
-        messageText.setText(getIntent().getStringExtra(KEY_TEXT));
+        messageTextView.setText(getIntent().getStringExtra(KEY_TEXT));
 
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,9 +61,4 @@ public class MessageActivity extends AppCompatActivity {
         }
     }
 
-    public static Intent newIntent(Context context, String text) {
-        Intent intent = new Intent(context, MessageActivity.class);
-        intent.putExtra(KEY_TEXT, text);
-        return intent;
-    }
 }
